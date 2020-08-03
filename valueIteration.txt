@@ -1,0 +1,10 @@
+init V[s] = 0, for all s in states
+let pi be some policy 
+
+for iteration = 1, 2, ...:
+  for s in states:
+    compute V[s] = expect(reward + gamma * V[s_] | pi)
+  generate pi_: 
+    pi_[s] = argmax(expect_{P}(V[s']))
+  
+  
