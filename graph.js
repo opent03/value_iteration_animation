@@ -1,4 +1,3 @@
-
 class Vertex {
     // Generic vertex class
     constructor(name, radius) {
@@ -10,7 +9,7 @@ class Vertex {
     addOutNeighbor(vertex) {
         this.outNeighbors.add(vertex);
     }
-    
+
     isOutNeighbor(vertex) {
         return this.outNeighbors.has(vertex);
     }
@@ -19,3 +18,9 @@ class Vertex {
         return vertex.isOutNeighbor(this) || this.isOutNeighbor(vertex);
     }
 }
+
+let graph = {
+    Vertex,
+};
+
+

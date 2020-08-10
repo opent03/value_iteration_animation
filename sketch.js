@@ -4,16 +4,16 @@ M = getExampleMDP();
 let statePositions = {};
 let stateActionPositions = {};
 let vertexPositions = new Map();
-let graph = getGraph();
+let G = test.getGraph();
 
 function setup() {
-  createCanvas(600, 600);
-  initStateActions(statePositions, stateActionPositions, M);
-  initVertexPositions(vertexPositions, graph);
+  let canvas = createCanvas(600, 600);
+  canvas.parent('p5-container');
+  //physics.initStateActions(statePositions, stateActionPositions, M);
+  physics.initVertexPositions(vertexPositions, G);
 }
 
 function draw() {
-
   background(220);
   textAlign(CENTER, CENTER);
   /* 
@@ -21,12 +21,9 @@ function draw() {
   
   drawStateActions(statePositions, stateActionPositions, M);
   */
-  updateVertexPositions(vertexPositions, graph);
+  physics.updateVertexPositions(vertexPositions, G);
 
-  drawGraph(vertexPositions, graph);
-
-  
-  
+  physics.drawGraph(vertexPositions, G);
 }
 
 console.log(valueIteration(M))

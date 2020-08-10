@@ -247,3 +247,21 @@ function applyForce(p, q, length = 1) {
     p.ax -= F * vectX;
     p.ay -= F * vectY;
 }
+
+let physics = {
+    initVertexPositions, 
+    updateVertexPositions, 
+    drawGraph, 
+    radius,
+    arrowScale,
+    arrowCurve, 
+    k,
+    springLength,
+    physicsGamma
+};
+
+
+
+
+
+

@@ -1,7 +1,29 @@
 html, body {
-  margin: 0;
-  padding: 0;
+  font-size: large;
+  font-family: "Computer Modern Serif";
+  background-color:#cfc4b2;
 }
-canvas {
-  display: block;
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
+h1 {
+  text-align: center;
+}
+
+#text-container {
+  width: min(90vw, 100ch);
+  text-align: justify;
+}
+
+#text-container pre {
+  margin-left: 2ch;
+}
+
+.katex {
+  font-size: 1em !important;
+}
+
