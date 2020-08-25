@@ -7,17 +7,17 @@
 
 
 function getGraph() {
-    let radius = 50;
+    let radius = 30;
     v1 = new graph.Vertex(1, radius);
     v2 = new graph.Vertex(2, radius);
     v3 = new graph.Vertex(3, radius);
     v4 = new graph.Vertex(4, radius);
-    v5 = new graph.Vertex(4, radius);
-    v6 = new graph.Vertex(4, radius);
-    v7 = new graph.Vertex(4, radius);
-    v8 = new graph.Vertex(4, radius);
-    v9 = new graph.Vertex(4, radius);
-    v10 = new graph.Vertex(4, radius);
+    v5 = new graph.Vertex(5, radius);
+    v6 = new graph.Vertex(6, radius);
+    v7 = new graph.Vertex(7, radius);
+    v8 = new graph.Vertex(8, radius);
+    v9 = new graph.Vertex(9, radius);
+    v10 = new graph.Vertex(10, radius);
 
 
     v1.addOutNeighbor(v3);
@@ -31,9 +31,11 @@ function getGraph() {
     v7.addOutNeighbor(v8);
     v9.addOutNeighbor(v2);
     v3.addOutNeighbor(v7);
-    return [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10];
+    graph = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10];
+    console.log(computeDistance(v10, v9, graph));
+    console.log(v9.distanceTo(v7));
+    return graph;
 }
-
 
 let test = {
     getGraph,

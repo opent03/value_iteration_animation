@@ -1,18 +1,18 @@
 M = getExampleMDP();
-// M = gridworldToMDP(g);
+M = gridworldToMDP(g);
 
 let statePositions = {};
 let stateActionPositions = {};
 let vertexPositions = new Map();
 let G = test.getGraph();
 
+// G = graph.MDPtoGraph(M);
 let isFullscreen = false;
 let originalHeight = 600;
 
 function setup() {
   let canvas = createCanvas(getParagraphWidth(), originalHeight);
   canvas.parent('p5-container');
-  //physics.initStateActions(statePositions, stateActionPositions, M);
   physics.initVertexPositions(vertexPositions, G);
   let button = createButton('⤢');
   button.parent('p5-container');
@@ -31,11 +31,6 @@ function setup() {
 function draw() {
   background(220);
   textAlign(CENTER, CENTER);
-  /* 
-  updateStateActions(statePositions, stateActionPositions, M);
-  
-  drawStateActions(statePositions, stateActionPositions, M);
-  */
   physics.updateVertexPositions(vertexPositions, G);
 
   physics.drawGraph(vertexPositions, G);
