@@ -32,8 +32,8 @@ function getGraph() {
     v9.addOutNeighbor(v2);
     v3.addOutNeighbor(v7);
     graph = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10];
-    console.log(computeDistance(v10, v9, graph));
-    console.log(v9.distanceTo(v7));
+    computeDistances(graph);
+    console.log(v9.distanceTo(v10));
     return graph;
 }
 

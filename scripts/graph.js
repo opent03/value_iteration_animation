@@ -45,16 +45,19 @@ function computeDistance(v1, v2, graph) {
 
 function bfs(root, v2, graph, traverse) {
     let Q = [];
+    let counter = new Map();
+    counter.set(root, 0);
     traverse.set(root, true);
     Q.push(root);
     while (Q.length != 0) {
         let v = Q.shift();
         if (v == v2) {
-            return 0;
+            return counter.get(v);
         }
-        for (let w in graph) {
+        for (let w of graph) {
             if (w.isNeighbor(v) && !traverse.get(w)) {
                 traverse.set(w, true);
+                counter.set(w, counter.get(v)+1);
                 Q.push(w);
                 // this is fucked up 
             }
@@ -62,7 +65,6 @@ function bfs(root, v2, graph, traverse) {
     }
 
 }
-
 
 function MDPtoGraph(M) {
     let stateVertexMap = new Map();
@@ -92,8 +94,8 @@ function MDPtoGraph(M) {
         }
     }
 
-
-    return result
+    computeDistances(result);
+    return result;
 }
 
 let graph = {

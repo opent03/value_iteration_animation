@@ -4,9 +4,9 @@ M = gridworldToMDP(g);
 let statePositions = {};
 let stateActionPositions = {};
 let vertexPositions = new Map();
-let G = test.getGraph();
+//let G = test.getGraph();
 
-// G = graph.MDPtoGraph(M);
+let G = graph.MDPtoGraph(M);
 let isFullscreen = false;
 let originalHeight = 600;
 

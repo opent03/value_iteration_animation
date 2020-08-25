@@ -1,8 +1,8 @@
-let radius = 20;
+let radius = 10;
 let arrowScale = 10;
 let arrowCurve = 0.01 * arrowScale;
-let k = 0.05;
-let springLength = 200;
+let k = 0.01;
+let springLength = 100;
 let physicsGamma = 0.1;
 let margin = 50;
 
@@ -32,12 +32,7 @@ function updateVertexPositions(vertexPositions, graph) {
             if (v1 == v2) {
                 continue;
             }
-            if (v1.isNeighbor(v2)) {
-                applyForce(p1, p2);
-            }
-            else {
-                applyForce(p1, p2, length=2);
-            }
+            applyForce(p1, p2, v1.distanceTo(v2));
         }
     }
 
